@@ -19,13 +19,12 @@ import org.jsoup.select.Elements;
 
 public class Querry {
 
-    private String url;
+    private static final String url = "https://www.fundamentus.com.br/resultado.php";
     private Document doc;
     private List<Stock> stocks;
 
     public Querry() {
         try {
-            this.url = "https://www.fundamentus.com.br/resultado.php";
             this.doc = Jsoup.connect(url).get();
             this.stocks = getStocks();
         } catch (IOException ex) {
